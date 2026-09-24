@@ -1,0 +1,350 @@
+section .data
+    text1 db "I", 10
+    text2 db "wrote", 10
+    text3 db "a poem", 10
+    text4 db "in the shape", 10
+    text5 db "of a Christmas", 10
+    text6 db "tree but then forgot", 10
+    text7 db "to water it and only a few", 10
+    text8 db "days", 10
+    text9 db "later", 10
+    text10 db "there", 10
+    text11 db "were", 10
+    text12 db "words", 10
+    text13 db "all", 10
+    text14 db "over", 10
+    text15 db "the"
+    text16 db "carpet", 10
+
+    padding1 times 39 db ' '
+    padding2 times 37 db ' '
+    padding3 times 36 db ' '
+    padding4 times 33 db ' '
+    padding5 times 31 db ' '
+    padding6 times 28 db ' '
+    padding7 times 22 db ' '
+    padding8 times 36 db ' '
+    padding9 times 35 db ' '
+    padding10 times 35 db ' '
+    padding11 times 25 db ' '
+    padding12 times 40 db ' '
+    padding13 times 20 db ' '
+    padding14 times 40 db ' '
+    padding15 times 27 db ' '
+    padding16 times 30 db ' '
+
+    blank db 10
+
+    message1 db 0x49, 0x20, 0x4C, 0x6F, 0x56, 0x65, 0x20
+             db 0x41, 0x73, 0x53, 0x65, 0x4D, 0x62, 0x4C, 0x79, 0x20
+             db 0x50, 0x72, 0x4F, 0x67, 0x52, 0x61, 0x4D, 0x6D
+             db 0x49, 0x6E, 0x67, 0x47, 0x20, 0x3A, 0x29, 0x0A
+
+    ; Student Number
+    message2 db 0x53, 0x74, 0x75, 0x64, 0x65, 0x6E, 0x74, 0x20
+             db 0x4E, 0x75, 0x6D, 0x62, 0x65, 0x72, 0x3A, 0x20
+             db 0x32, 0x30, 0x32, 0x35, 0x31, 0x31, 0x39, 0x30, 0x34, 0x0A
+
+    ; ALECKS
+    text17 db 65, 76, 69, 67, 75, 83, 10
+
+    ; GABRIELLE
+    text18 db 71, 65, 66, 82, 73, 69, 76, 76, 69, 10
+
+    ; ADIOVA
+    text19 db 65, 68, 73, 79, 86, 65, 10
+
+section .text
+    global _start
+
+_start:
+    call displayText1
+    call displayText2
+    call displayText3
+    call displayText4
+    call displayText5
+    call displayText6
+    call displayText7
+    call displayText8
+    call displayText9
+    call displayText10
+    call displayText11
+    call displayText12
+    call displayText13
+    call displayText14
+    call displayText15
+    call displayText16
+    call displayMessage1
+    call displayMessage2
+    call displayAlecks
+    call displayGabrielle
+    call displayAdiova
+    call exitProgram
+
+displayText1:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding1
+    mov edx, 39
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text1
+    mov edx, 2
+    int 0x80
+    ret
+
+displayText2:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding2
+    mov edx, 37
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text2
+    mov edx, 6
+    int 0x80
+    ret
+
+displayText3:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding3
+    mov edx, 36
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text3
+    mov edx, 7
+    int 0x80
+    ret
+
+displayText4:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding4
+    mov edx, 33
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text4
+    mov edx, 13
+    int 0x80
+    ret
+
+displayText5:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding5
+    mov edx, 31
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text5
+    mov edx, 15
+    int 0x80
+    ret
+
+displayText6:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding6
+    mov edx, 28
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text6
+    mov edx, 21
+    int 0x80
+    ret
+
+displayText7:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding7
+    mov edx, 22
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text7
+    mov edx, 27
+    int 0x80
+    ret
+
+displayText8:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding8
+    mov edx, 36
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text8
+    mov edx, 5
+    int 0x80
+    ret
+
+displayText9:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding9
+    mov edx, 35
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text9
+    mov edx, 6
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, blank
+    mov edx, 1
+    int 0x80
+    ret
+
+displayText10:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding10
+    mov edx, 35
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text10
+    mov edx, 6
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, blank
+    mov edx, 1
+    int 0x80
+    ret
+
+displayText11:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding11
+    mov edx, 25
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text11
+    mov edx, 5
+    int 0x80
+    ret
+
+displayText12:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding12
+    mov edx, 40
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text12
+    mov edx, 6
+    int 0x80
+    ret
+
+displayText13:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding13
+    mov edx, 20
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text13
+    mov edx, 4
+    int 0x80
+    ret
+
+displayText14:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding14
+    mov edx, 40
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text14
+    mov edx, 5
+    int 0x80
+    ret
+
+displayText15:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding15
+    mov edx, 27
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text15
+    mov edx, 3
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding16
+    mov edx, 30
+    int 0x80
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text16
+    mov edx, 7
+    int 0x80
+    ret
+
+displayText16:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, blank
+    mov edx, 1
+    int 0x80
+    ret
+
+displayMessage1:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, message1
+    mov edx, 32
+    int 0x80
+    ret
+
+displayMessage2:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, message2
+    mov edx, 26
+    int 0x80
+    ret
+
+displayAlecks:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text17
+    mov edx, 7
+    int 0x80
+    ret
+
+displayGabrielle:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text18
+    mov edx, 10
+    int 0x80
+    ret
+
+displayAdiova:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text19
+    mov edx, 7
+    int 0x80
+    ret
+
+exitProgram:
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
