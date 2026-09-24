@@ -1,0 +1,135 @@
+section .data
+    ; Letters for H E L L O
+    letter1 db 72
+    letter2 db 69
+    letter3 db 76
+    letter4 db 76, 10
+    letter5 db 79, 10
+
+    ;ALECKS
+    text1 db 65, 76, 69, 67, 75, 83, 10
+
+    ;GABRIELLE
+    text2 db 71, 65, 66, 82, 73, 69, 76, 76, 69, 10
+
+    ;ADIOVA
+    text3 db 65, 68, 73, 79, 86, 65, 10
+
+    padding1 times 9 db 32
+    padding2 times 3 db 32
+    padding3 times 10 db 32
+    padding4 times 7 db 32
+    padding5 times 8 db 32
+    padding6 times 13 db 32
+    padding7 times 19 db 32
+
+section .text
+    global _start
+
+_start:
+    ;H
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, letter1
+    mov edx, 1
+    int 0x80
+
+    ; Print spaces before FIRSTNAME
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding1
+    mov edx, 9
+    int 0x80
+
+    ;ALECKS
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text1
+    mov edx, 7
+    int 0x80
+
+    ; Print spaces before E
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding2
+    mov edx, 3
+    int 0x80
+
+    ;E
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, letter2
+    mov edx, 1
+    int 0x80
+
+    ; Print spaces 
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding3
+    mov edx, 10
+    int 0x80
+
+    ;GABRIELLE
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text2
+    mov edx, 10
+    int 0x80
+
+    ; Print spaces before L
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding4
+    mov edx, 7
+    int 0x80
+
+    ;L
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, letter3
+    mov edx, 1
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding5
+    mov edx, 8
+    int 0x80
+
+    ;ADIOVA
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text3
+    mov edx, 7
+    int 0x80
+
+    ;L
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding6
+    mov edx, 13
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, letter4
+    mov edx, 2
+    int 0x80
+
+    ;O
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding7
+    mov edx, 19
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, letter5
+    mov edx, 2
+    int 0x80
+
+    ; Exit
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
