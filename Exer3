@@ -1,0 +1,51 @@
+section .data
+    clearScreen db 27, '[2J', 0
+    text1 db "hadji", 10
+    text2 db "tejuco", 10
+    padding1 times 37 db ' '
+    padding2 times 36 db ' '
+
+section .text
+    global _start
+
+_start:
+
+    ; clear the screen
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, clearScreen
+    mov edx, 4
+    int 0x80
+
+    ; print padding1
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding1
+    mov edx, 37
+    int 0x80
+
+    ; print "hadji"
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text1
+    mov edx, 6
+    int 0x80
+
+    ; print padding2
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding2
+    mov edx, 36
+    int 0x80
+
+    ; print "tejuco"
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text2
+    mov edx, 7
+    int 0x80
+
+    ; exit
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
