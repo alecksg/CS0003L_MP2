@@ -1,0 +1,65 @@
+section .data
+    text1 db 65, 68, 73, 79, 86, 65, 10
+    text2 db 65, 76, 69, 67, 75, 83, 10
+    text3 db 71, 65, 66, 82, 73, 69, 76, 76, 69, 10
+    text4 db 76, 69, 67, 75, 83, 10
+
+    padding1 times 10 db ' '
+    padding2 times 15 db ' '
+    padding3 times 20 db ' '
+
+section .text
+    global _start
+
+_start:
+
+    ; ADIOVA
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text1
+    mov edx, 7
+    int 0x80
+
+    ; ALECKS
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding1
+    mov edx, 10
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text2
+    mov edx, 7
+    int 0x80
+
+    ; GABRIELLE
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding2
+    mov edx, 15
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text3
+    mov edx, 10
+    int 0x80
+
+    ; LECKS
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, padding3
+    mov edx, 20
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, text4
+    mov edx, 6
+    int 0x80
+
+    ; exit
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
